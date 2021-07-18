@@ -5,7 +5,6 @@ import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
 import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons'
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
-import { redirect } from 'next/dist/next-server/server/api-utils';
 
 function ProfileSidebar(propriedades) {
   return (
@@ -25,28 +24,19 @@ function ProfileSidebar(propriedades) {
   )
 }
 
-function ProfileRelationsBox(propriedades) {
-  return (
-    <ProfileRelationsBoxWrapper>
-      <h2 className="smallTitle">
-        {propriedades.title} ({propriedades.items.length})
-      </h2>
+// function ProfileRelationsBox(propriedades) {
+  // return (
+    // <ProfileRelationsBoxWrapper>
+    //   <h2 className="smallTitle">
+    //     {propriedades.title} ({propriedades.items.length})
+    //   </h2>
     
-      <ul>
-        {/* {seguidores.map((itemAtual) => {
-          return (
-            <li key={itemAtual}>
-              <a href={`https://github.com/${itemAtual}.png`}>
-                <img src={itemAtual.image} />
-                <span>{itemAtual.title}</span>
-              </a>
-            </li>
-          )
-        })} */}
-      </ul>
-    </ProfileRelationsBoxWrapper>
-  )
-}
+    //   <ul>
+        
+    //   </ul>
+    // </ProfileRelationsBoxWrapper>
+  // )
+// }
 
 export default function Home(props) {
   const usuarioAleatorio = props.githubUser;
@@ -168,7 +158,7 @@ export default function Home(props) {
           </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
-          <ProfileRelationsBox title="Seguidores" items={seguidores} />
+          {/* <ProfileRelationsBox title="Seguidores" items={seguidores} /> */}
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Comunidades ({comunidades.length})
